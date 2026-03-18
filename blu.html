@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Scoopie Prize</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Baloo+2:wght@500&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+margin:0;
+font-family:'Fredoka', sans-serif;
+text-align:center;
+
+background:linear-gradient(
+120deg,
+#c7ecff,
+#96ccee,
+#66b0ef,
+#31a0d8,
+#66b0ef,
+#bfe6ff,
+#c7ecff
+);
+
+height:100vh;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:flex-start;
+padding-top:400px;
+
+overflow:hidden;
+}
+
+/* CARD */
+
+.container{
+background:white;
+padding:30px 20px;
+width:530px;
+
+border-radius:35px;
+
+box-shadow:
+0 15px 35px rgba(100,170,255,0.25),
+0 0 0 8px #d8f2ff,
+0 0 0 14px #eefaff;
+
+position:relative;
+z-index:2;
+}
+
+/* STAR */
+
+.star{
+font-size:105px;
+color:#5cc3ff;
+animation:bounce 2s infinite;
+}
+
+@keyframes bounce{
+0%,100%{transform:translateY(0);}
+50%{transform:translateY(-12px);}
+}
+
+/* WIN TEXT */
+
+.win{
+font-size:30px;
+color:#3ea7ff;
+letter-spacing:1px;
+animation:pop 0.9s ease;
+}
+
+@keyframes pop{
+0%{transform:scale(0);}
+70%{transform:scale(1.2);}
+100%{transform:scale(1);}
+}
+
+/* SPARKLE */
+
+.sparkle{
+font-size:24px;
+animation:blink 1.5s infinite alternate;
+}
+
+@keyframes blink{
+from{opacity:0.4;}
+to{opacity:1;}
+}
+
+/* RUNNING TEXT */
+
+.ticker{
+margin-top:55px;
+width:100%;
+white-space:nowrap;
+overflow:hidden;
+font-size:28px;
+font-weight:600;
+color:#037cd8;
+}
+
+.ticker span{
+display:inline-block;
+padding-left:100%;
+animation:scroll 8s linear infinite;
+}
+
+@keyframes scroll{
+0%{transform:translateX(0);}
+100%{transform:translateX(-100%);}
+}
+
+/* CONFETTI */
+
+.confetti{
+position:absolute;
+width:10px;
+height:10px;
+top:-10px;
+animation:fall linear infinite;
+opacity:0.9;
+border-radius:3px;
+}
+
+@keyframes fall{
+to{
+transform:translateY(110vh) rotate(360deg);
+}
+}
+
+/* SNOW */
+
+.snow{
+position:absolute;
+top:-10px;
+color:white;
+font-size:16px;
+animation:snowfall linear infinite;
+opacity:0.9;
+}
+
+@keyframes snowfall{
+to{
+transform:translateY(110vh);
+}
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- CONFETTI SUPER BANYAK -->
+
+<script>
+for(let i=0;i<120;i++){
+
+let confetti=document.createElement("div");
+confetti.className="confetti";
+
+confetti.style.left=Math.random()*100+"%";
+
+let colors=["#7fd4ff","#b4e7ff","#5ec6ff","#9adfff","#6ed0ff","#c7f0ff","#8ad9ff"];
+confetti.style.background=colors[Math.floor(Math.random()*colors.length)];
+
+confetti.style.animationDuration=(Math.random()*4+2)+"s";
+confetti.style.width=(Math.random()*8+6)+"px";
+confetti.style.height=confetti.style.width;
+
+document.body.appendChild(confetti);
+
+}
+</script>
+
+<!-- SNOWFALL -->
+
+<script>
+for(let i=0;i<70;i++){
+
+let snow=document.createElement("div");
+snow.className="snow";
+snow.innerHTML="❄";
+
+snow.style.left=Math.random()*100+"%";
+snow.style.animationDuration=(Math.random()*6+4)+"s";
+snow.style.fontSize=(Math.random()*10+10)+"px";
+
+document.body.appendChild(snow);
+
+}
+</script>
+
+
+<div class="container">
+
+<div class="sparkle">❄️💙❄️</div>
+
+<div class="star">★</div>
+
+<div class="win">YOU’RE LUCKY!</div>
+
+<h2 style="color:#4bb8ff;font-family:'Baloo 2',cursive;">
+You got a BLUE bottle!
+</h2>
+
+<div class="sparkle">💙❄️💙</div>
+
+</div>
+
+<div class="ticker">
+<span>💙 Show this screen to the cashier to claim your prize 💙</span>
+</div>
+
+</body>
+</html>
